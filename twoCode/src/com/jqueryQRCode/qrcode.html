@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>使用JQueryQrCode生成二维码</title>
+<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="./js/qrcode.js"></script>
+</head>
+<body>
+<div id="qrcode"></div>
+
+<script type="text/javascript">
+//参数1表示图像大小，取值范围1-10；参数2表示质量，取值范围'L','M','Q','H'
+var content = "使用JQueryQrCode生成二维码"
+var qr = qrcode(8, 'M');
+qr.addData(content);
+qr.make();
+/* var dom=document.createElement('DIV');
+dom.innerHTML = qr.createImgTag();
+var element=document.getElementById("qrcode");
+element.appendChild(dom); */
+$("#qrcode").html(qr.createImgTag());
+  
+</script>
+</body>
+</html>
